@@ -41,11 +41,11 @@ RegisterCommand("unrack", function(source, args, rawCommand)
 				disableCombat = true,
 			},
 			animation = {
-				animDict = "missheistdockssetup1clipboard@idle_a",
-				anim = "idle_a",
+				animDict = "amb@prop_human_bum_bin@idle_b",
+				anim = "idle_d",
 			},
 			prop = {
-				model = "prop_paper_bag_small",
+				model = "",
 			}
 		}, function(status)
 			if not status then
@@ -78,11 +78,11 @@ RegisterCommand("rack", function(source, args, rawCommand)
 				disableCombat = true,
 			},
 			animation = {
-				animDict = "missheistdockssetup1clipboard@idle_a",
-				anim = "idle_a",
+				animDict = "amb@prop_human_bum_bin@idle_b",
+				anim = "idle_d",
 			},
 			prop = {
-				model = "prop_paper_bag_small",
+				model = "",
 			}
 		}, function(status)
 			if not status then
