@@ -25,8 +25,10 @@ RegisterCommand("unrack", function(source, args, rawCommand)
 	local vehicleCoords = GetEntityCoords(closestVehicle)
 	local weapon =	GetHashKey("WEAPON_CARBINERIFLE")
 	local class = GetVehicleClass(closestVehicle)
+	local job	=	PlayerData.job
+	local grade = PlayerData.job.grade_name
 
-	if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+	if job ~= nil and job.name == 'police' and grade ~= 'recruit' then
 	if Distance < 2.0  and class == 18 and not IsPedInAnyVehicle(ped, false) then
 		TriggerEvent("mythic_progbar:client:progress", {
 			name = "action_rifle_unrack",
@@ -41,15 +43,15 @@ RegisterCommand("unrack", function(source, args, rawCommand)
 				disableCombat = true,
 			},
 			animation = {
-				animDict = "amb@prop_human_bum_bin@idle_b",
-				anim = "idle_d",
+				animDict = "missheistdockssetup1clipboard@idle_a",
+				anim = "idle_a",
 			},
 			prop = {
-				model = "",
+				model = "prop_paper_bag_small",
 			}
 		}, function(status)
 			if not status then
-				GiveWeaponToPed(ped, weapon, 130, false, true)
+				GiveWeaponToPed(ped, weapon, 120, false, true)
 			end
 		end)
 	end
@@ -62,8 +64,10 @@ RegisterCommand("rack", function(source, args, rawCommand)
 	local vehicleCoords = GetEntityCoords(closestVehicle)
 	local weapon =	GetHashKey("WEAPON_CARBINERIFLE")
 	local class = GetVehicleClass(closestVehicle)
+	local job	=	PlayerData.job
+	local grade = PlayerData.job.grade_name
 
-	if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+	if job ~= nil and job.name == 'police' and grade ~= 'recruit' then
 	if Distance < 2.0  and class == 18 and not IsPedInAnyVehicle(ped, false) then
 		TriggerEvent("mythic_progbar:client:progress", {
 			name = "action_rack_rifle",
@@ -78,11 +82,11 @@ RegisterCommand("rack", function(source, args, rawCommand)
 				disableCombat = true,
 			},
 			animation = {
-				animDict = "amb@prop_human_bum_bin@idle_b",
-				anim = "idle_d",
+				animDict = "missheistdockssetup1clipboard@idle_a",
+				anim = "idle_a",
 			},
 			prop = {
-				model = "",
+				model = "prop_paper_bag_small",
 			}
 		}, function(status)
 			if not status then
